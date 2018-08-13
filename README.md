@@ -1,7 +1,12 @@
-1. SETUP
-Require npm from v3.10.10 & node v6.11.0. After installation run npm install.
-2. BUILD
-Execute "npm run build" to create distribution files.
-Execute "npm run build_prod" to create production distibution files
-3. DEVELOP and SERVE
-Execute "npm run serve" to start webpack development server. Also can publish dist folder to other web server to serve the content.
+1. Установка  
+Для сборки проекта необходима версия node.js не ниже 6.11.5 и npm не ниже 3.10.10.
+После установки ПО необходимо выполнить команду "run npm install" в корне каталога проекта для установки зависимостей.
+
+2. Сборка  
+Выполнение "npm run build" создает каталог dist с артефактами сборки.
+Выполнение "npm run build_prod" создает каталог dist с прод. артефактами сборки.
+
+3. Выполнение  
+Выполните "npm run serve" чтобы стартовать webpack development server. Папка "dist" содержит в себе все файлы для публикации. Один из лучших и простых cli-вэб серверов https://www.npmjs.com/package/http-server.
+
+Проект выполнен нс помощью Angular.io 5 версии. Испоьзуется сторонний API Яндекс Карты.
