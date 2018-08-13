@@ -1,0 +1,23 @@
+<div class="paginator">
+	<button (click)="previousPage()">&lt;</button>
+	<input  type="text" value="{{ value }}" />
+	<button (click)="nextPage()">&gt;</button>
+</div>
+<div class="table">
+	<div class="row head">
+		<div class="cell ind">No</div>
+		<div class="cell lat">Latitide</div>
+		<div class="cell lon">Longitude</div>
+		<div class="cell dat">Timestamp</div>
+		<div class="cell rad">Radius</div>
+	</div>
+	<div class="body">
+		<div class="row" *ngFor="let record of records; index as i">
+			<div class="cell ind"><label>№&nbsp;</label>{{ orderNum(i) }}</div>
+			<div class="cell lat"><label>Latitude:</label>{{ record.latitude }}</div>
+			<div class="cell lon"><label>Longitude:</label>{{ record.longitude }}</div>
+			<div class="cell dat"><label>Timestamp:</label>{{ record.timestamp }}</div>
+			<div class="cell rad"><label>Radius:</label>{{ record.radius }}</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,15 @@
+<div class="device-panel__registration">
+	<form (submit)="registerDevice($event, deviceName)">
+		<input autocomplete="none" placeholder="Device name..." #nameInput ngModel #deviceName="ngModel" type="text" name="deviceName" />
+		<button type="submit" [(disabled)]="!deviceName.value">Register</button>
+	</form>
+</div>
+<div class="devices-panel__devices"><!--
+--><div *ngFor="let device of devices" class="device-panel__device">
+		<label>Name:</label>
+		<span>{{ device.name }}</span>
+		<label>ID:</label>
+		<span>{{ device.id }}</span>
+		<button (click)="removeDevice(device.id)">Remove</button>
+	</div><!--
+--></div>

@@ -1,0 +1,21 @@
+<div class="not-for-eyes">
+    <ng-container #init></ng-container>
+</div>
+<div class="flex-layout">
+    <div class="top-panel">
+        <span class="device-name"><span>Current device:</span><b>{{ currentDevice?.name }}</b></span>
+        <button class="burger" (click)="openMenu()"><img src="img/burger.svg" /></button>
+    </div>
+    <div class="map-container">
+        <div id="map" style="width: 100%; height: 100%"></div>
+    </div>
+</div>
+<div class="table-container" [ngClass]="{ 'table-container--active': tableMode }">
+    <div class="map-toggler">
+        <button (click)="toggleMode()">
+            <img src="img/map.svg" />
+        </button>
+    </div>
+    <flex-table [active]="tableMode"></flex-table>
+</div>
+<float-menu #floatMenu></float-menu>

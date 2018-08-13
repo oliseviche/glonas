@@ -1,0 +1,155 @@
+:host {
+    flex: 1 1 0;
+    overflow: auto;
+    display: flex;
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    margin: 10px;
+    box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
+    font-size: 110%;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+    height: 48px;
+    align-items: center;
+    border-bottom: solid 1px rgba(0,0,0,.12);
+}
+
+.head {
+    color: rgba(0,0,0,.54);
+    border-bottom-color: rgba(0,0,0,.12);
+    flex: 0 1 auto;
+}
+
+.body {
+    flex: 1 1 0;
+    overflow: auto;
+}
+
+.cell {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cell label {
+    color: rgba(0,0,0,.54);
+    display: none;
+    margin-bottom: 2px;
+}
+
+.cell {
+    width: 22.5%;
+    box-sizing: border-box;
+}
+
+.cell.ind {
+    width: 10%;
+    padding-left: 15px;
+}
+.cell.ind::after {
+    content: '.'
+}
+
+.cell.rad {
+    padding-right: 15px;
+}
+
+.paginator {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex
+}
+
+.paginator input[type='text'] {
+    line-height: 24px;
+    width: 130px;
+    border:solid 1px #ccc;
+    border-left: none;
+    border-right: none;
+    padding: 0 5px;
+    text-align: center;
+}
+
+.paginator button {
+    line-height: 24px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border: solid 1px #ccc;
+    font-weight: bold;
+}
+
+.paginator button ~ button {
+    border-radius: 2px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+@media screen and (max-width: 700px) {
+    .cell.rad {
+        display: none;
+    }
+
+    .cell {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .cell.dat {
+        display: none;
+    }
+
+    .cell {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .row.head {
+        display: none;
+    }
+
+    .row {
+        flex-direction: column;
+        height: auto;
+        align-items: flex-start;
+        padding: 5px;
+    }
+
+    .cell, .cell.ind {
+        width: 100%;
+    }
+
+    .cell + .cell {
+        margin-top: 10px;
+    }
+
+    .cell label {
+        display: initial;
+    }
+
+    .cell + .cell label {
+        display: block;
+    }
+
+    .cell.ind::after {
+        content: ''
+    }
+
+    .cell.ind, .cell.rad {
+        padding: 0;
+    }
+
+    .cell.dat, .cell.rad {
+        display: block;
+    }
+}

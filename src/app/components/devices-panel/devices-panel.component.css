@@ -1,0 +1,89 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.device-panel__registration form {
+    display: flex;
+    flex-wrap: unset;
+    flex: 0 0 auto;
+    padding: 10px;
+    border-bottom: solid 1px #ccc;
+    justify-content: center;
+}
+.device-panel__registration input[type='text'] {
+    padding: 5px;
+    border: solid 1px #ccc;
+    border-right: none;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+.device-panel__registration button {
+    padding: 5px;
+    border: solid 1px #ccc;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+.device-panel__registration input[type='text']:focus + button {
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+.devices-panel__devices {
+    flex: 1 1 0;
+    overflow: auto;
+}
+.devices-panel__devices:empty::after {
+    content: 'No devices';
+    display: block;
+    text-align: center;
+    padding: 10px;
+    color: #000a;
+}
+
+.device-panel__device {
+    padding: 10px;
+    border-bottom: solid 1px #ccc;
+}
+.device-panel__device:hover {
+    background-color: #dbdbdb;
+}
+.device-panel__device label {
+    font-style: italic;
+    vertical-align: middle;
+    padding: 0 5px 0 0;
+    color: #3f51b5;
+}
+
+.device-panel__device span {
+    vertical-align: middle;
+    white-space: nowrap;
+    display: inline-block;
+    max-width: 170px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+}
+
+.device-panel__device label ~ label::before {
+    content: '';
+    display: block;
+}
+
+.device-panel__device button {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    color: #1976d2;
+    float: right;
+}
+
+.device-panel__device button:hover {
+    color: #6e6e6e;
+}
+
+.device-panel__device button::before {
+    content: '';
+    display: block;
+}

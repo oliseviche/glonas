@@ -1,0 +1,29 @@
+:host {
+    display: flex;
+    flex-direction: row;
+    transform: translate(-50%, 0);
+    height: 30px;
+    max-width: 125px;
+    border:solid 1px #ccc;
+    border-radius: 2px;
+}
+
+:host > button {
+    flex: 0 0 0;
+    border: none;
+    padding: 0 10px;
+    font-weight: bold;
+}
+
+:host > input[type='text'] {
+    flex: 1 0 0;
+    width: 100%;
+    border: none;
+    text-align: center;
+}
+
+@media screen and (max-width: 550px) {
+    :host {
+        transform: translate(-153px, -30px); 
+    }
+}

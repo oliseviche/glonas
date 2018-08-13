@@ -1,0 +1,18 @@
+<div class="container" [ngClass]="{'container--active': isOpened}">
+	<div class="float-menu">
+		<div class="float-menu__breadcrumb">
+			<button [ngClass]="{ 'hidden': panelsStack.length === 1 }" class="breadcrumb__close-panel" (click)="closePanel()">back</button>
+			<span class="breadcrumb__name">{{ panelName }}</span>
+			<button class="breadcrumb__close" (click)="close()">&#10005;</button>
+		</div>
+		<div class="float-menu__panels">
+			<div #options class="float-menu__panel float-menu__panel--active">
+				<selector></selector>
+				<button class="float-menu__item" (click)="openPanel(devices, 'Devices')">Devices</button>
+			</div>
+			<div #devices class="float-menu__panel">
+				<devices-panel></devices-panel>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,18 @@
+<div>
+	<label>From:</label>
+	<input type="date" [ngModel]="startDate | date:'yyyy-MM-dd'" (change)="startDate = $event.target.valueAsDate" [disabled]="!selectedDeviceId" />
+</div>
+<div>
+	<label>To:</label>
+	<input type="date" [ngModel]="endDate | date:'yyyy-MM-dd'" (change)="endDate = $event.target.valueAsDate" [disabled]="!selectedDeviceId" />
+</div>
+<div>
+	<label>Device:</label>
+	<div class="device-list">
+		<label *ngFor="let device of devices">
+			<input type="radio" [attr.name]="'device'" [value]="device.id" [(ngModel)]="selectedDeviceId" />
+			<span>{{ device.name }}</span>
+		</label>
+	</div>
+</div>
+<button (click)="apply()" [disabled]="!selectedDeviceId">Apply</button>
